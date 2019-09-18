@@ -33,7 +33,7 @@ public class MyTest2 {
          *    ===================
          *    hello world
          */
-        System.out.println(MyParent2.str);
+        System.out.println(MyParent2.m);
     }
 }
 
@@ -59,12 +59,12 @@ public class MyTest2 {
  * }
  */
 class MyParent2 {
-    public static final String str = "hello world";
+//    public static final String str = "hello world";
 
 //    public static  String str = "hello world";
 //    public static final short s = 7;
 //    public static final int i = 128;
-//    public static final int m = 1;
+    public static final int m = 1;
     static {
         System.out.println("MyParent2 static block");
     }
