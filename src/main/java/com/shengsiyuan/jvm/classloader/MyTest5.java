@@ -9,8 +9,10 @@ public class MyTest5 {
 
 //        System.out.println(MyChild55.b);
 
-        System.out.println(MyChild5.a);
+        System.out.println(MyChild5.b);
 
+//        new CC();
+//        new CC();
 
     }
 }
@@ -28,7 +30,7 @@ public class MyTest5 {
 interface MyParent5 {
     // 接口的字段默认是public static final
     // int a = new Random().nextInt(4);
-    int a = 5;
+//    int a = 5;
 
     Thread thread1 = new Thread() {
         {
@@ -40,6 +42,8 @@ interface MyParent5 {
 }
 
 class MyChild5 extends MyParent implements MyParent5 {
+
+//    class MyChild5  implements MyParent5 {
     // int b = new Random().nextInt(4);
 
     public static Thread thread2 = new Thread() {
@@ -54,5 +58,25 @@ class MyChild5 extends MyParent implements MyParent5 {
 class MyParent {
     static {
         System.out.println("MyParent 初始化");
+    }
+}
+
+class CC {
+    /**
+     * 加上 static  只会加载时调用一次 ，new 多个对象时只会看到一次
+     */
+    static  {
+        System.out.println("hello");
+    }
+
+    /**
+     *    不加上 static  只会加载时调用一次 ，new 多个对象时只会看到打印多次
+     */
+    {
+        System.out.println("hello");
+    }
+
+    public CC (){
+        System.out.println("C");
     }
 }
