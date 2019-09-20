@@ -4,6 +4,8 @@ public class MySample {
     public MySample() {
         System.out.println("MySample is loaded by:" + this.getClass().getClassLoader());
 
-//        new MyCat();
+        new MyCat();
+
+        System.out.println("MySample from: " + MyCat.class);
     }
 }

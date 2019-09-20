@@ -83,32 +83,77 @@ public class MyTest16 extends ClassLoader {
 
     public static void main(String[] args) throws Exception {
         MyTest16 loader1 = new MyTest16("loader1");
-
-        loader1.path = "D:\\JVM_PRO\\jvm_learn\\target\\classes\\com\\shengsiyuan\\jvm\\classloader";
-
-        Class<?> clazz = loader1.loadClass("com.shengsiyuan.jvm.classloader.MyTest1");
+//        loader1.path = "D:\\JVM_PRO\\jvm_learn\\target\\classes\\com\\shengsiyuan\\jvm\\classloader";
+        loader1.path = "D:\\learn_pro\\test\\target\\classes\\";
+//        Class<?> clazz = loader1.loadClass("com.shengsiyuan.jvm.classloader.MyTest1");
+        Class<?> clazz = loader1.loadClass("test2.AA");
         System.out.println("class:" + clazz.hashCode());
         Object object = clazz.newInstance();
         System.out.println(object);
+        System.out.println("#############################");
+        loader1 = null;
+        clazz = null;
+        object = null;
+
+
+         System.gc();
+         Thread.sleep(200000);
+        System.out.println("#############################");
+
+        loader1 = new MyTest16("loader1");
+//        loader1.path = "D:\\JVM_PRO\\jvm_learn\\target\\classes\\com\\shengsiyuan\\jvm\\classloader";
+        loader1.path = "D:\\learn_pro\\test\\target\\classes\\";
+//        Class<?> clazz = loader1.loadClass("com.shengsiyuan.jvm.classloader.MyTest1");
+        clazz = loader1.loadClass("test2.AA");
+        System.out.println("class:" + clazz.hashCode());
+        object = clazz.newInstance();
+
+
+//        System.gc();
+        System.out.println(object);
+
+        System.out.println("-----------------------");
+//
+////        loader1 = null;
+////        clazz = null;
+////        object = null;
+//        MyTest16 loader2 = new MyTest16(loader1,"loader2");
+////        loader2.path = "D:\\JVM_PRO\\jvm_learn\\target\\classes\\com\\shengsiyuan\\jvm\\classloader";
+//
+//        loader2.path = "D:\\learn_pro\\test\\target\\classes\\";
+//
+////        Class<?> clazz2 = loader2.loadClass("com.shengsiyuan.jvm.classloader.MyTest1");
+//        Class<?> clazz2 = loader2.loadClass("test2.AA");
+//        System.out.println("class:" + clazz2.hashCode());
+//        Object object2 = clazz2.newInstance();
+//        System.out.println(object2);
 
         System.out.println("-----------------------");
 
-//        loader1 = null;
-//        clazz = null;
-//        object = null;
+//        MyTest16 loader3 = new MyTest16(loader2,"loader3");
+////        loader3.path = "D:\\JVM_PRO\\jvm_learn\\target\\classes\\com\\shengsiyuan\\jvm\\classloader";
+//
+//        loader3.path = "D:\\learn_pro\\test\\target\\classes\\";
+//
+////        Class<?> clazz3 = loader3.loadClass("com.shengsiyuan.jvm.classloader.MyTest1");
+//        Class<?> clazz3= loader3.loadClass("test2.AA");
+//        System.out.println("class:" + clazz3.hashCode());
+//        Object object3 = clazz3.newInstance();
+//        System.out.println(object3);
+//
+        System.out.println("-----------------------");
 
 
-
-        loader1 = new MyTest16("loader2");
-
-        loader1.path = "C:\\Users\\85239\\Desktop\\";
-
-        clazz = loader1.loadClass("com.shengsiyuan.jvm.classloader.MyTest1");
-        System.out.println("class:" + clazz.hashCode());
-        object = clazz.newInstance();
-        System.gc();
-        Thread.sleep(100000);
-        System.out.println(object);
+//        loader1 = new MyTest16("loader2");
+//
+//        loader1.path = "C:\\Users\\85239\\Desktop\\";
+//
+//        clazz = loader1.loadClass("com.shengsiyuan.jvm.classloader.MyTest1");
+//        System.out.println("class:" + clazz.hashCode());
+//        object = clazz.newInstance();
+//        System.gc();
+//        Thread.sleep(100000);
+//        System.out.println(object);
 //
 //        MyTest16 loader2 = new MyTest16(loader1, "loader2");
 //
